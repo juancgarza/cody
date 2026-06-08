@@ -1,0 +1,51 @@
+{
+  "name": "cody-realtime-voice-code-editor",
+  "version": "0.1.0",
+  "description": "Neovim-first voice and text control: turns short spoken or typed commands into exact editor actions via the OpenAI Realtime API.",
+  "license": "MIT",
+  "author": "JC Garza",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juancgarza/cody.git"
+  },
+  "homepage": "https://github.com/juancgarza/cody#readme",
+  "bugs": {
+    "url": "https://github.com/juancgarza/cody/issues"
+  },
+  "keywords": [
+    "neovim",
+    "voice",
+    "openai",
+    "realtime",
+    "tts",
+    "elevenlabs",
+    "editor",
+    "assistant"
+  ],
+  "bin": {
+    "cody-realtime": "dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "tsx src/cli.ts",
+    "eval:router": "tsx src/evals/router-eval.ts",
+    "tts:smoke": "tsx src/tts/smoke.ts",
+    "tts:voices": "tsx src/tts/voices.ts",
+    "test": "node --import tsx --test src/*.test.ts src/**/*.test.ts",
+    "typecheck": "tsc --noEmit -p tsconfig.json"
+  },
+  "dependencies": {
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "@types/ws": "^8.5.13",
+    "tsx": "^4.19.2",
+    "typescript": "^5.8.0",
+    "typescript-language-server": "^5.3.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
